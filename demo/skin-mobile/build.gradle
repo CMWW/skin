@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk rootProject.compileSdkVersion
+
+    defaultConfig {
+        applicationId "skin.support.mobile.demo"
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+
+        buildConfigField("String", "BUILD_TIME", "\"" + new Date().format("yyyy-MM-dd") + "\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res',
+                           'src/main/res-black',
+                           'src/main/res-blue',
+                           'src/main/res-green',
+                           'src/main/res-orange',
+                           'src/main/res-pink',
+                           'src/main/res-red',
+                           'src/main/res-white',
+                           'src/main/res-yellow']
+        }
+    }
+    namespace 'skin.support.mobile.demo'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.cardview:cardview:$cardViewVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+
+//    implementation 'skin.support:skin-support:4.0.5'                   // skin-support
+//    implementation 'skin.support:skin-support-appcompat:4.0.5'         // skin-support 基础控件支持
+//    implementation 'skin.support:skin-support-design:4.0.5'            // skin-support-design material design 控件支持[可选]
+    implementation 'skin.support:skin-support-cardview:4.0.5'
+    // skin-support-cardview CardView 控件支持[可选]
+    implementation 'skin.support:skin-support-constraint-layout:4.0.5'
+    // skin-support-constraint-layout ConstraintLayout 控件支持[可选]
+
+    implementation project(':androidx:skin-support')
+    implementation project(':androidx:skin-support-appcompat')
+    implementation project(':androidx:skin-support-design')
+}
