@@ -34,11 +34,11 @@ dependencies {
     implementation project(':androidx:skin-support-appcompat')
 
     implementation "com.google.android.material:material:$materialVersion"
-    implementation project(':androidx:skin-support-design')
-//    implementation 'skin.support:skin-support-design:3.0.0'
+    implementation project(':androidx:skin-support-material')
+    //    implementation 'skin.support:skin-support-design:3.0.0'
 
     implementation "androidx.constraintlayout:constraintlayout:$constraintVersion"
-    implementation project(':androidx:skin-support-constraint-layout')
+    implementation project(':androidx:skin-support-constraintlayout')
 //    implementation 'skin.support:skin-support-constraint-layout:3.0.0'
 
     implementation "androidx.cardview:cardview:$cardViewVersion"

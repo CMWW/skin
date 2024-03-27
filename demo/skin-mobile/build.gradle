@@ -54,5 +54,7 @@ dependencies {
 
     implementation project(':androidx:skin-support')
     implementation project(':androidx:skin-support-appcompat')
-    implementation project(':androidx:skin-support-design')
+    implementation project(':androidx:skin-support-material')
+    implementation project(':androidx:skin-support-cardview')
+    implementation project(':androidx:skin-support-constraintlayout')
 }

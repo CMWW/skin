@@ -50,7 +50,7 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.findByName('release')
-                groupId = 'com.github.littlefogcat'
+                groupId = 'com.github.CMWW'
                 artifactId = 'skin-support-appcompat'
                 version = rootProject.skinAndroidXVersion
             }

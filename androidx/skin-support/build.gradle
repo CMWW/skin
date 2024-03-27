@@ -52,7 +52,7 @@ afterEvaluate {
                 from components.findByName('release')
 
                 // You can then customize attributes of the publication as shown below.
-                groupId = 'com.github.littlefogcat'
+                groupId = 'com.github.CMWW'
                 artifactId = 'skin-support'
                 version = publishVersion
                 artifact(sourceJar)
