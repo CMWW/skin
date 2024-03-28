@@ -35,4 +35,15 @@ ext {
     descContent = 'H07000223/FlycoTabLayout 控件换肤支持包'
 }
 
-//apply from: '../../publishing_maven.gradle'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.findByName('release')
+                groupId = 'com.github.CMWW'
+                artifactId = 'skin-support-flycotablayout'
+                version = rootProject.skinAndroidXVersion
+            }
+        }
+    }
+}
