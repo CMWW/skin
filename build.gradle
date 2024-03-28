@@ -2,7 +2,7 @@
 buildscript {
     ext {
         ksp_version = '1.8.10-1.0.9'
-        agp_version = '8.3.1'
+        agp_version = '7.4.2'
 
         appcompatVersion = "1.5.1"
         materialVersion = "1.10.0"

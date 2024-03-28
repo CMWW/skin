@@ -1,7 +1,7 @@
 plugins {
     id 'com.github.dcendents.android-maven'
 }
-version = '4.1.0'
+version = '4.1.1'
 group = 'skin.support'
 
 def siteUrl = 'https://github.com/CMWW/skin'
@@ -75,7 +75,6 @@ tasks.register('javadoc', Javadoc) {
 
 tasks.register('javadocJar', Jar) {
     dependsOn javadoc
-    classifier = 'javadoc'
     from javadoc.destinationDir
 }
 
