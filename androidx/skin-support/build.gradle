@@ -17,7 +17,10 @@ android {
         }
     }
     namespace 'skin.support'
-
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
+    }
 }
 
 dependencies {
@@ -38,7 +41,7 @@ ext {
 }
 tasks.register('sourceJar', Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier "sources"
+    archiveClassifier
 }
 
 // Because the components are created only during the afterEvaluate phase, you must
@@ -50,7 +53,6 @@ afterEvaluate {
             release(MavenPublication) {
                 // Applies the component for the release build variant.
                 from components.findByName('release')
-
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.CMWW'
                 artifactId = 'skin-support'

@@ -40,16 +40,12 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.wli_feature:
-                CommonUtils.jumpUrl(this, Constants.URL.FEATURE_URL);
-                break;
-            case R.id.wli_license:
-                CommonUtils.jumpUrl(this, Constants.URL.LICENSE_URL);
-                break;
-            case R.id.wli_update_version:
-                CommonUtils.jumpUrl(this, Constants.URL.UPDATE_VERSION_URL);
-                break;
+        if (v.getId() == R.id.wli_feature) {
+            CommonUtils.jumpUrl(this, Constants.URL.FEATURE_URL);
+        } else if (v.getId() == R.id.wli_license) {
+            CommonUtils.jumpUrl(this, Constants.URL.LICENSE_URL);
+        } else if (v.getId() == R.id.wli_update_version) {
+            CommonUtils.jumpUrl(this, Constants.URL.UPDATE_VERSION_URL);
         }
     }
 }

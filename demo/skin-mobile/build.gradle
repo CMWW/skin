@@ -12,6 +12,10 @@ android {
 
         buildConfigField("String", "BUILD_TIME", "\"" + new Date().format("yyyy-MM-dd") + "\"")
     }
+    buildFeatures {
+        //noinspection DataBindingWithoutKapt
+        buildConfig = true
+    }
 
     buildTypes {
         release {

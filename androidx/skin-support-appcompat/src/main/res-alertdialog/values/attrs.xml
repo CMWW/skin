@@ -11,4 +11,98 @@
     <attr name="skinAlertDialogListItemTextColor" format="reference" />
     <attr name="skinListChoiceIndicatorMultiple" format="reference" />
     <attr name="skinListChoiceIndicatorSingle" format="reference" />
+
+    <declare-styleable name="SkinBackgroundHelper">
+        <attr name="android:background" />
+    </declare-styleable>
+
+    <declare-styleable name="SkinCompatImageView">
+        <attr name="android:src" />
+        <attr name="srcCompat" format="reference" />
+        <attr name="android:tint" format="color" />
+        <attr name="tint" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SkinCompatTextHelper">
+        <attr name="android:drawableLeft" />
+        <attr name="android:drawableTop" />
+        <attr name="android:drawableRight" />
+        <attr name="android:drawableBottom" />
+        <attr name="android:drawableStart" />
+        <attr name="android:drawableEnd" />
+        <attr name="android:textAppearance" />
+    </declare-styleable>
+
+    <declare-styleable name="Toolbar">
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <attr name="android:textColorHint" />
+        <attr name="android:textStyle" />
+        <attr name="android:typeface" />
+        <attr name="textAllCaps" format="boolean" />
+        <attr name="android:shadowColor" />
+        <attr name="android:shadowDy" />
+        <attr name="android:shadowDx" />
+        <attr name="android:shadowRadius" />
+
+        <attr name="titleTextAppearance" format="reference" />
+        <attr name="subtitleTextAppearance" format="reference" />
+        <attr name="title" />
+        <attr name="subtitle" />
+        <attr name="android:gravity" />
+
+        <attr name="titleMargin" format="dimension" />
+
+        <attr name="titleMarginStart" format="dimension" />
+
+        <attr name="titleMarginEnd" format="dimension" />
+
+        <attr name="titleMarginTop" format="dimension" />
+
+        <attr name="titleMarginBottom" format="dimension" />
+
+        <attr name="titleMargins" format="dimension" />
+        <attr name="contentInsetStart" />
+        <attr name="contentInsetEnd" />
+        <attr name="contentInsetLeft" />
+        <attr name="contentInsetRight" />
+        <attr name="contentInsetStartWithNavigation" />
+        <attr name="contentInsetEndWithActions" />
+        <attr name="maxButtonHeight" format="dimension" />
+        <attr name="buttonGravity">
+            <!-- Place object in the vertical center of its container, not changing its size. -->
+            <flag name="center_vertical" value="0x10" />
+            <!-- Push object to the top of its container, not changing its size. -->
+            <flag name="top" value="0x30" />
+            <!-- Push object to the bottom of its container, not changing its size. -->
+            <flag name="bottom" value="0x50" />
+        </attr>
+
+        <attr name="collapseIcon" format="reference" />
+
+        <attr name="collapseContentDescription" format="string" />
+
+        <attr name="popupTheme" />
+
+        <attr name="navigationIcon" format="reference" />
+
+        <attr name="navigationContentDescription" format="string" />
+
+        <attr name="logo" />
+
+        <attr name="logoDescription" format="string" />
+
+        <attr name="titleTextColor" format="color" />
+
+        <attr name="subtitleTextColor" format="color" />
+        <attr name="android:minHeight" />
+
+        <attr name="menu" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SkinCompatProgressBar">
+        <attr name="android:indeterminateDrawable" />
+        <attr name="android:progressDrawable" />
+    </declare-styleable>
+
 </resources>

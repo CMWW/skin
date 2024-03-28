@@ -59,22 +59,18 @@ public class MainActivity extends BaseActivity {
                 setTitle(mMenuBnv.getMenu().getItem(position).getTitle());
             }
         });
-        mMenuBnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.bnv_home:
-                        mContainerVp.setCurrentItem(0);
-                        return true;
-                    case R.id.bnv_discovery:
-                        mContainerVp.setCurrentItem(1);
-                        return true;
-                    case R.id.bnv_mine:
-                        mContainerVp.setCurrentItem(2);
-                        return true;
-                }
-                return false;
+        mMenuBnv.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.bnv_home) {
+                mContainerVp.setCurrentItem(0);
+                return true;
+            } else if (item.getItemId() == R.id.bnv_discovery) {
+                mContainerVp.setCurrentItem(1);
+                return true;
+            } else if (item.getItemId() == R.id.bnv_mine) {
+                mContainerVp.setCurrentItem(2);
+                return true;
             }
+            return false;
         });
     }
 }

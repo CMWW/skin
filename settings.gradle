@@ -1,3 +1,24 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
 include ':demo:skin-night'
 
 // DEMO for androidx
@@ -12,3 +33,5 @@ include ':androidx:skin-support-constraintlayout'
 include ':third-part-support:circleimageview'
 include ':third-part-support:flycotablayout'
 include ':demo:skin-mobile'
+
+rootProject.name = "skin"

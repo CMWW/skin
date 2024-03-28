@@ -30,12 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity implements SkinComp
         setSupportActionBar(toolbar);
         if (enableHomeAsUp) {
             toolbar.setNavigationIcon(R.drawable.icon_back);
-            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
+            toolbar.setNavigationOnClickListener(v -> finish());
         }
     }
 

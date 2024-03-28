@@ -4,16 +4,21 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.StyleRes;
+
 import com.google.android.material.navigation.NavigationView;
+
 import android.util.AttributeSet;
 import android.util.TypedValue;
+
+import com.google.android.material.R;
 
 import skin.support.content.res.SkinCompatResources;
 import skin.support.content.res.SkinCompatV7ThemeUtils;
 import skin.support.content.res.SkinCompatVectorResources;
-import skin.support.design.R;
+
 import skin.support.widget.SkinCompatBackgroundHelper;
 import skin.support.widget.SkinCompatHelper;
 import skin.support.widget.SkinCompatSupportable;
@@ -57,9 +62,9 @@ public class SkinMaterialNavigationView extends NavigationView implements SkinCo
         if (a.hasValue(R.styleable.NavigationView_itemTextAppearance)) {
             int textAppearance = a.getResourceId(R.styleable.NavigationView_itemTextAppearance, INVALID_ID);
             if (textAppearance != INVALID_ID) {
-                TypedArray ap = context.obtainStyledAttributes(textAppearance, R.styleable.SkinTextAppearance);
-                if (ap.hasValue(R.styleable.SkinTextAppearance_android_textColor)) {
-                    mTextColorResId = ap.getResourceId(R.styleable.SkinTextAppearance_android_textColor, INVALID_ID);
+                TypedArray ap = context.obtainStyledAttributes(textAppearance, skin.support.R.styleable.SkinTextAppearance);
+                if (ap.hasValue(skin.support.R.styleable.SkinTextAppearance_android_textColor)) {
+                    mTextColorResId = ap.getResourceId(skin.support.R.styleable.SkinTextAppearance_android_textColor, INVALID_ID);
                 }
                 ap.recycle();
             }
@@ -101,9 +106,9 @@ public class SkinMaterialNavigationView extends NavigationView implements SkinCo
     public void setItemTextAppearance(@StyleRes int resId) {
         super.setItemTextAppearance(resId);
         if (resId != INVALID_ID) {
-            TypedArray a = getContext().obtainStyledAttributes(resId, R.styleable.SkinTextAppearance);
-            if (a.hasValue(R.styleable.SkinTextAppearance_android_textColor)) {
-                mTextColorResId = a.getResourceId(R.styleable.SkinTextAppearance_android_textColor, INVALID_ID);
+            TypedArray a = getContext().obtainStyledAttributes(resId, skin.support.R.styleable.SkinTextAppearance);
+            if (a.hasValue(skin.support.R.styleable.SkinTextAppearance_android_textColor)) {
+                mTextColorResId = a.getResourceId(skin.support.R.styleable.SkinTextAppearance_android_textColor, INVALID_ID);
             }
             a.recycle();
             applyItemTextColorResource();
@@ -163,5 +168,4 @@ public class SkinMaterialNavigationView extends NavigationView implements SkinCo
         applyItemTextColorResource();
         applyItemBackgroundResource();
     }
-
 }

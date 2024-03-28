@@ -1,19 +1,20 @@
 package skin.support.widget;
 
+import static skin.support.widget.SkinCompatHelper.INVALID_ID;
+import static skin.support.widget.SkinCompatHelper.checkResourceId;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.os.Build;
-import androidx.annotation.DrawableRes;
-import androidx.appcompat.widget.AppCompatSpinner;
 import android.util.AttributeSet;
 import android.util.Log;
 
-import skin.support.appcompat.R;
-import skin.support.content.res.SkinCompatVectorResources;
+import androidx.annotation.DrawableRes;
+import androidx.appcompat.R;
+import androidx.appcompat.widget.AppCompatSpinner;
 
-import static skin.support.widget.SkinCompatHelper.INVALID_ID;
-import static skin.support.widget.SkinCompatHelper.checkResourceId;
+import skin.support.content.res.SkinCompatVectorResources;
 
 /**
  * Created by ximsfei on 17-1-21.
@@ -51,31 +52,26 @@ public class SkinCompatSpinner extends AppCompatSpinner implements SkinCompatSup
         this(context, attrs, defStyleAttr, mode, null);
     }
 
+    @SuppressLint("ResourceType")
     public SkinCompatSpinner(Context context, AttributeSet attrs, int defStyleAttr, int mode, Resources.Theme popupTheme) {
         super(context, attrs, defStyleAttr, mode, popupTheme);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.Spinner, defStyleAttr, 0);
 
         if (getPopupContext() != null) {
             if (mode == MODE_THEME) {
-                if (Build.VERSION.SDK_INT >= 11) {
-                    // If we're running on API v11+ we will try and read android:spinnerMode
-                    TypedArray aa = null;
-                    try {
-                        aa = context.obtainStyledAttributes(attrs, ATTRS_ANDROID_SPINNERMODE,
-                                defStyleAttr, 0);
-                        if (aa.hasValue(0)) {
-                            mode = aa.getInt(0, MODE_DIALOG);
-                        }
-                    } catch (Exception e) {
-                        Log.i(TAG, "Could not read android:spinnerMode", e);
-                    } finally {
-                        if (aa != null) {
-                            aa.recycle();
-                        }
+                TypedArray aa = null;
+                try {
+                    aa = context.obtainStyledAttributes(attrs, ATTRS_ANDROID_SPINNERMODE,
+                            defStyleAttr, 0);
+                    if (aa.hasValue(0)) {
+                        mode = aa.getInt(0, MODE_DIALOG);
                     }
-                } else {
-                    // Else, we use a default mode of dropdown
-                    mode = MODE_DROPDOWN;
+                } catch (Exception e) {
+                    Log.i(TAG, "Could not read android:spinnerMode", e);
+                } finally {
+                    if (aa != null) {
+                        aa.recycle();
+                    }
                 }
             }
 
@@ -112,5 +108,4 @@ public class SkinCompatSpinner extends AppCompatSpinner implements SkinCompatSup
         }
         applyPopupBackground();
     }
-
 }

@@ -1,11 +1,13 @@
 package skin.support.widget;
 
 import android.content.Context;
+
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.widget.AppCompatCheckBox;
+
 import android.util.AttributeSet;
 
-import skin.support.appcompat.R;
+import androidx.appcompat.R;
 
 /**
  * Created by ximsfei on 17-1-14.
@@ -93,5 +95,4 @@ public class SkinCompatCheckBox extends AppCompatCheckBox implements SkinCompatS
             mTextHelper.applySkin();
         }
     }
-
 }

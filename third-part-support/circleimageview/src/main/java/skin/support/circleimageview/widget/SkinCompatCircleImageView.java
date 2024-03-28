@@ -5,7 +5,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import skin.support.circleimageview.R;
+import de.hdodenhof.circleimageview.R;
 import skin.support.content.res.SkinCompatResources;
 import skin.support.widget.SkinCompatHelper;
 import skin.support.widget.SkinCompatImageHelper;
@@ -90,5 +90,4 @@ public class SkinCompatCircleImageView extends CircleImageView implements SkinCo
         applyBorderColorResource();
         applyFillColorResource();
     }
-
 }
