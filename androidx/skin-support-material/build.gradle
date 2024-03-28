@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk rootProject.compileSdkVersion
+    compileSdk 34
 
     defaultConfig {
-        minSdk rootProject.minSdkVersion
-        targetSdk rootProject.targetSdkVersion
+        minSdk 24
+        targetSdk 34
     }
     buildTypes {
         release {
@@ -32,8 +32,8 @@ dependencies {
 }
 
 ext {
-    publishVersion = rootProject.skinAndroidXVersion
-    publishGroup = rootProject.skinAndroidXSkinGroup
+    publishVersion = "$materialVersion"
+    publishGroup = 'skin.support'
     moduleName = 'skin-support-material'
     descContent = 'material design控件换肤支持包'
 }
@@ -45,7 +45,7 @@ afterEvaluate {
                 from components.findByName('release')
                 groupId = 'com.github.CMWW'
                 artifactId = 'skin-support-material'
-                version = rootProject.skinAndroidXVersion
+                version = "$materialVersion"
             }
         }
     }

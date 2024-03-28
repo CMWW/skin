@@ -1,11 +1,11 @@
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+plugins {
+    id 'com.github.dcendents.android-maven'
+}
+version = '4.1.0'
+group = 'skin.support'
 
-version = publishVersion
-group = publishGroup
-
-def siteUrl = 'https://github.com/ximsfei/Android-skin-support'
-def gitUrl = 'https://github.com/ximsfei/Android-skin-support.git'
+def siteUrl = 'https://github.com/CMWW/skin'
+def gitUrl = 'https://github.com/CMWW/skin.git'
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -20,7 +20,7 @@ bintray {
         name = moduleName
         desc = descContent
         websiteUrl = siteUrl
-        issueTrackerUrl = 'https://github.com/ximsfei/Android-skin-support/issues'
+        issueTrackerUrl = 'https://github.com/CMWW/skin/issues'
         vcsUrl = gitUrl
         licenses = ['MIT']
         labels = ['skin', 'support', 'theme', 'android']
@@ -33,12 +33,12 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name moduleName
+                name 'skin-support'
                 url siteUrl
                 licenses {
                     license {
                         name 'MIT'
-                        url 'https://github.com/ximsfei/Android-skin-support/blob/master/LICENSE'
+                        url 'https://github.com/CMWW/skin/blob/master/LICENSE'
                     }
                 }
                 developers {
@@ -82,10 +82,4 @@ tasks.register('javadocJar', Jar) {
 artifacts {
     archives javadocJar
     archives sourcesJar
-}
-
-tasks.register('findConventions') {
-    doLast {
-        println project.getConvention()
-    }
 }

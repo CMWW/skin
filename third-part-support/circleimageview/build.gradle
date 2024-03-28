@@ -1,11 +1,14 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
-    compileSdk rootProject.compileSdkVersion
+    compileSdk 34
 
     defaultConfig {
-        minSdk rootProject.minSdkVersion
-        targetSdk rootProject.targetSdkVersion
+        minSdk 24
+        targetSdk 34
     }
     buildTypes {
         release {
@@ -25,7 +28,7 @@ dependencies {
 
 ext {
     publishVersion = '2.1.0.4'
-    publishGroup = rootProject.skinAndroidXSkinGroup
+    publishGroup = 'skin.support'
     moduleName = 'circleimageview'
     descContent = 'hdodenhof/CircleImageView 控件换肤支持包'
 }

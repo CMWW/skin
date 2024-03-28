@@ -4,19 +4,12 @@ buildscript {
         ksp_version = '1.8.10-1.0.9'
         agp_version = '8.3.1'
 
-        compileSdkVersion = 34
-        minSdkVersion = 24
-        targetSdkVersion = 34
-
         appcompatVersion = "1.5.1"
         materialVersion = "1.10.0"
         cardViewVersion = "1.0.0"
         constraintVersion = "2.1.4"
-
+        cardViewVersion = "1.0.0"
         glideVersion = "4.15.1"
-
-        skinAndroidXVersion = "4.0.8"
-        skinAndroidXSkinGroup = "skin.support"
     }
 }
 
