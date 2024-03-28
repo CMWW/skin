@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        minSdk 24
-        targetSdk 34
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
     }
     buildTypes {
         release {
@@ -28,7 +28,7 @@ dependencies {
 
 ext {
     publishVersion = '2.1.0.4'
-    publishGroup = 'skin.support'
+    publishGroup = rootProject.skinAndroidXSkinGroup
     moduleName = 'circleimageview'
     descContent = 'hdodenhof/CircleImageView 控件换肤支持包'
 }

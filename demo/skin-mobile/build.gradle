@@ -1,20 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 34
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
         applicationId "skin.support.mobile.demo"
-        minSdk 24
-        targetSdk 34
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
 
         buildConfigField("String", "BUILD_TIME", "\"" + new Date().format("yyyy-MM-dd") + "\"")
-    }
-    buildFeatures {
-        //noinspection DataBindingWithoutKapt
-        buildConfig = true
     }
 
     buildTypes {

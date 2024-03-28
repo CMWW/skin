@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        minSdk 24
-        targetSdk 34
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
     }
     buildTypes {
         release {
@@ -17,10 +17,6 @@ android {
         }
     }
     namespace 'skin.support.constraintlayout'
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
 }
 
 dependencies {
@@ -31,8 +27,8 @@ dependencies {
 }
 
 ext {
-    publishVersion = "$constraintVersion"
-    publishGroup = 'skin.support'
+    publishVersion = rootProject.skinAndroidXVersion
+    publishGroup = rootProject.skinAndroidXSkinGroup
     moduleName = 'skin-support-constraintlayout'
     descContent = 'ConstraintLayout控件换肤支持包'
 }
@@ -44,7 +40,7 @@ afterEvaluate {
                 from components.findByName('release')
                 groupId = 'com.github.CMWW'
                 artifactId = 'skin-support-constraintlayout'
-                version = "$constraintVersion"
+                version = rootProject.skinAndroidXVersion
             }
         }
     }

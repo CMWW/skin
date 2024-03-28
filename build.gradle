@@ -1,20 +1,50 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    ext {
-        ksp_version = '1.8.10-1.0.9'
-        agp_version = '7.4.2'
 
-        appcompatVersion = "1.5.1"
-        materialVersion = "1.10.0"
-        cardViewVersion = "1.0.0"
-        constraintVersion = "2.1.4"
-        cardViewVersion = "1.0.0"
-        glideVersion = "4.15.1"
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
     }
 }
 
-plugins {
-    id 'com.android.application' version "$agp_version" apply false
-    id 'com.android.library' version "$agp_version" apply false
-    id 'com.google.devtools.ksp' version "$ksp_version" apply false
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    compileSdkVersion = 34
+    minSdkVersion = 24
+    targetSdkVersion = 35
+
+    appcompatVersion = "1.5.1"
+    materialVersion = "1.10.0"
+    cardViewVersion = "1.0.0"
+    constraintVersion = "2.1.4"
+
+    glideVersion = "4.7.1"
+
+    skinAndroidSupportVersion = "3.1.4"
+    skinAndroidSupportSkinGroup = "skin.support"
+    skinAndroidXVersion = "4.1.2"
+    skinAndroidXSkinGroup = "skin.support"
 }

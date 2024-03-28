@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        minSdk 24
-        targetSdk 34
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
     }
     buildTypes {
         release {
@@ -41,8 +41,8 @@ tasks.withType(Javadoc).configureEach {
 }
 
 ext {
-    publishVersion = "$appcompatVersion"
-    publishGroup = 'skin.support'
+    publishVersion = rootProject.skinAndroidXVersion
+    publishGroup = rootProject.skinAndroidXSkinGroup
     moduleName = 'skin-support-appcompat'
     descContent = 'skin-support 基础控件换肤支持包'
 }
@@ -54,7 +54,7 @@ afterEvaluate {
                 from components.findByName('release')
                 groupId = 'com.github.CMWW'
                 artifactId = 'skin-support-appcompat'
-                version = "$appcompatVersion"
+                version = rootProject.skinAndroidXVersion
             }
         }
     }

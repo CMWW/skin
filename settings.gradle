@@ -1,28 +1,16 @@
-pluginManagement {
-    repositories {
-        maven { url 'https://maven.aliyun.com/repository/public/' }
-        maven { url 'https://maven.aliyun.com/repository/google/' }
-        google()
-        mavenCentral()
-        maven { url 'https://jitpack.io' }
-    }
-}
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        maven { url 'https://maven.aliyun.com/repository/public/' }
-        maven { url 'https://maven.aliyun.com/repository/google/' }
-        google()
-        mavenCentral()
-        maven { url 'https://jitpack.io' }
-    }
-}
-
 include ':demo:skin-night'
+
+// DEMO for android support
+//include ':demo:skin-app'
 
 // DEMO for androidx
 include ':demo:skin-androidx-app'
+
+// for android support
+//include ':android-support:skin-support'
+//include ':android-support:skin-support-design'
+//include ':android-support:skin-support-cardview'
+//include ':android-support:skin-support-constraint-layout'
 
 // for androidx
 include ':androidx:skin-support'
@@ -33,5 +21,3 @@ include ':androidx:skin-support-constraintlayout'
 include ':third-part-support:circleimageview'
 include ':third-part-support:flycotablayout'
 include ':demo:skin-mobile'
-
-rootProject.name = "skin"

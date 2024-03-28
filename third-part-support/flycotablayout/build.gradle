@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        minSdk 24
-        targetSdk 34
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
     }
     buildTypes {
         release {
@@ -30,7 +30,7 @@ dependencies {
 
 ext {
     publishVersion = '2.1.2.2'
-    publishGroup = 'skin.support'
+    publishGroup = rootProject.skinAndroidXSkinGroup
     moduleName = 'flycotablayout'
     descContent = 'H07000223/FlycoTabLayout 控件换肤支持包'
 }

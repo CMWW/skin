@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        minSdk 24
-        targetSdk 34
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
     }
     buildTypes {
         release {
@@ -17,10 +17,7 @@ android {
         }
     }
     namespace 'skin.support'
-    compileOptions {
-        targetCompatibility JavaVersion.VERSION_17
-        sourceCompatibility JavaVersion.VERSION_17
-    }
+
 }
 
 dependencies {
@@ -33,9 +30,15 @@ tasks.withType(Javadoc).configureEach {
     options.addStringOption('charSet', 'UTF-8')
 }
 
+ext {
+    publishVersion = rootProject.skinAndroidXVersion
+    publishGroup = rootProject.skinAndroidXSkinGroup
+    moduleName = 'skin-support'
+    descContent = 'skin-support core'
+}
 tasks.register('sourceJar', Jar) {
     from android.sourceSets.main.java.srcDirs
-    archiveClassifier
+    classifier "sources"
 }
 
 // Because the components are created only during the afterEvaluate phase, you must
@@ -47,10 +50,11 @@ afterEvaluate {
             release(MavenPublication) {
                 // Applies the component for the release build variant.
                 from components.findByName('release')
+
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.CMWW'
                 artifactId = 'skin-support'
-                version = "4.1.1"
+                version = publishVersion
                 artifact(sourceJar)
             }
         }

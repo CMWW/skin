@@ -1,7 +1,7 @@
 plugins {
     id 'com.github.dcendents.android-maven'
 }
-version = '4.1.1'
+version = '4.1.2'
 group = 'skin.support'
 
 def siteUrl = 'https://github.com/CMWW/skin'
