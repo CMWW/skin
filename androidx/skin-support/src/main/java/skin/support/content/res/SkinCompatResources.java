@@ -16,6 +16,7 @@ import java.util.List;
 
 import skin.support.SkinCompatManager;
 import skin.support.annotation.AnyRes;
+import skin.support.annotation.Nullable;
 
 public class SkinCompatResources {
     private static volatile SkinCompatResources sInstance;
@@ -76,6 +77,7 @@ public class SkinCompatResources {
         }
     }
 
+    @Nullable
     public Resources getSkinResources() {
         return mResources;
     }
@@ -125,7 +127,7 @@ public class SkinCompatResources {
     }
 
     private int getSkinColor(Context context, int resId) {
-        if (!SkinCompatUserThemeManager.get().isColorEmpty()) {
+        if (SkinCompatUserThemeManager.get().isColorEmpty()) {
             ColorStateList colorStateList = SkinCompatUserThemeManager.get().getColorStateList(resId);
             if (colorStateList != null) {
                 return colorStateList.getDefaultColor();
@@ -150,7 +152,7 @@ public class SkinCompatResources {
     }
 
     private ColorStateList getSkinColorStateList(Context context, int resId) {
-        if (!SkinCompatUserThemeManager.get().isColorEmpty()) {
+        if (SkinCompatUserThemeManager.get().isColorEmpty()) {
             ColorStateList colorStateList = SkinCompatUserThemeManager.get().getColorStateList(resId);
             if (colorStateList != null) {
                 return colorStateList;
@@ -175,13 +177,13 @@ public class SkinCompatResources {
     }
 
     private Drawable getSkinDrawable(Context context, int resId) {
-        if (!SkinCompatUserThemeManager.get().isColorEmpty()) {
+        if (SkinCompatUserThemeManager.get().isColorEmpty()) {
             ColorStateList colorStateList = SkinCompatUserThemeManager.get().getColorStateList(resId);
             if (colorStateList != null) {
                 return new ColorDrawable(colorStateList.getDefaultColor());
             }
         }
-        if (!SkinCompatUserThemeManager.get().isDrawableEmpty()) {
+        if (SkinCompatUserThemeManager.get().isDrawableEmpty()) {
             Drawable drawable = SkinCompatUserThemeManager.get().getDrawable(resId);
             if (drawable != null) {
                 return drawable;

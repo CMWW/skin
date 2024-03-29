@@ -99,7 +99,7 @@ public class SkinCompatUserThemeManager {
                 try {
                     jsonArray.put(toJSONObject(state).putOpt(KEY_TYPE, KEY_TYPE_COLOR));
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    e.fillInStackTrace();
                 }
             }
         }
@@ -110,7 +110,7 @@ public class SkinCompatUserThemeManager {
                         .putOpt(KEY_DRAWABLE_NAME, drawableName)
                         .putOpt(KEY_DRAWABLE_PATH_AND_ANGLE, mDrawablePathAndAngleMap.get(drawableName)));
             } catch (JSONException e) {
-                e.printStackTrace();
+                e.fillInStackTrace();
             }
         }
         if (Slog.DEBUG) {
@@ -241,7 +241,7 @@ public class SkinCompatUserThemeManager {
         if (!TextUtils.isEmpty(drawablePathAndAngle)) {
             String[] splits = drawablePathAndAngle.split(":");
             if (splits.length == 2) {
-                return Integer.valueOf(splits[1]);
+                return Integer.parseInt(splits[1]);
             }
         }
         return 0;
@@ -258,7 +258,7 @@ public class SkinCompatUserThemeManager {
                     String path = splits[0];
                     int angle = 0;
                     if (splits.length == 2) {
-                        angle = Integer.valueOf(splits[1]);
+                        angle = Integer.parseInt(splits[1]);
                     }
                     if (checkPathValid(path)) {
                         if (angle == 0) {
@@ -296,11 +296,11 @@ public class SkinCompatUserThemeManager {
     }
 
     boolean isColorEmpty() {
-        return mColorEmpty;
+        return !mColorEmpty;
     }
 
     boolean isDrawableEmpty() {
-        return mDrawableEmpty;
+        return !mDrawableEmpty;
     }
 
     void clearCaches() {

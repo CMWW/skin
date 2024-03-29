@@ -429,19 +429,19 @@ public class SkinCompatManager extends SkinObservable {
      * 获取皮肤包包名.
      *
      * @param skinPkgPath sdcard中皮肤包路径.
-     * @return
+     * @return string
      */
     public String getSkinPackageName(String skinPkgPath) {
         PackageManager mPm = mAppContext.getPackageManager();
         PackageInfo info = mPm.getPackageArchiveInfo(skinPkgPath, PackageManager.GET_ACTIVITIES);
-        return info.packageName;
+        return info != null ? info.packageName : "";
     }
 
     /**
      * 获取皮肤包资源{@link Resources}.
      *
      * @param skinPkgPath sdcard中皮肤包路径.
-     * @return
+     * @return Resources
      */
     @Nullable
     public Resources getSkinResources(String skinPkgPath) {

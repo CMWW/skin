@@ -34,7 +34,7 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'skin-support'
+                name moduleName
                 url siteUrl
                 licenses {
                     license {

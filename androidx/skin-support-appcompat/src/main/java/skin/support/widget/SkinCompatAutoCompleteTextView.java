@@ -21,8 +21,8 @@ public class SkinCompatAutoCompleteTextView extends AppCompatAutoCompleteTextVie
             android.R.attr.popupBackground
     };
     private int mDropDownBackgroundResId = INVALID_ID;
-    private SkinCompatTextHelper mTextHelper;
-    private SkinCompatBackgroundHelper mBackgroundTintHelper;
+    private final SkinCompatTextHelper mTextHelper;
+    private final SkinCompatBackgroundHelper mBackgroundTintHelper;
 
     public SkinCompatAutoCompleteTextView(Context context) {
         this(context, null);

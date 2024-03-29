@@ -42,6 +42,6 @@ ext {
     glideVersion = "4.15.1"
 
     skinAndroidSupportSkinGroup = "skin.support"
-    skinAndroidXVersion = "4.1.6"
+    skinAndroidXVersion = "4.1.7"
     skinAndroidXSkinGroup = "skin.support"
 }
